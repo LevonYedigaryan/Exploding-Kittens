@@ -17,6 +17,13 @@ public class Table{
 		discard=new Card[deck.size()];
 	}
 
+	public Card getTopDiscard(){
+		if(discardLength-1<0){
+			return null;
+		}
+		return discard[discardLength-1];
+	}
+
 	public void setToDraw(int n){
 		toDraw=n;
 	}
@@ -40,6 +47,12 @@ public class Table{
 	public void next(){
 		if(++activePlayer==player.length){
 			activePlayer=0;
+		}
+	}
+
+	public void prev(){
+		if(--activePlayer<0){
+			activePlayer=player.length-1;
 		}
 	}
 

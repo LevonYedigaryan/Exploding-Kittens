@@ -19,4 +19,9 @@ public class Attack extends Card{
         }
         table.next();
     }
+
+    private void reverse(Table table){
+        table.setToDraw(table.getToDraw()-toDraw);
+        table.prev();
+    }
 }
