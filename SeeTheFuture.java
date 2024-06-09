@@ -13,4 +13,6 @@ public class SeeTheFuture extends Card{
     public void play(Table table){
         table.getDeck().seeTopCards(see);
     }
+
+    protected void reverse(Table table){}
 }

@@ -1,4 +1,4 @@
-public class Attack extends Card{
+public class Attack extends PendingCard{
     private int toDraw;
 
     public Attack(int n){
@@ -17,11 +17,19 @@ public class Attack extends Card{
         else{
             table.setToDraw(table.getToDraw()+toDraw);
         }
+        setReversable();
         table.next();
     }
 
-    private void reverse(Table table){
+    protected void reverse(Table table){
         table.setToDraw(table.getToDraw()-toDraw);
         table.prev();
+    }
+
+    public void pend(Table table){
+        if(table.getToDraw()<1){
+            table.removePending(this);
+        }
+        setReversable(false);
     }
 }

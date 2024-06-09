@@ -35,4 +35,6 @@ public class Favor extends Card{
         System.out.println(giving+", DO ME A FAVOR BITCH!\n");
         players[active].getCard(giving.play(giving+", give a present to your master!"));
     }
+
+    protected void reverse(Table table){}
 }

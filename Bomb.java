@@ -31,4 +31,6 @@ public class Bomb extends Card{
             }
         }
     }
+
+    protected void reverse(Table table){}
 }

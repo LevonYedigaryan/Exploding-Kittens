@@ -6,4 +6,6 @@ public class Shuffle extends Card{
     public void play(Table table){
         table.getDeck().shuffle();
     }
+
+    protected void reverse(Table table){}
 }

@@ -1,6 +1,5 @@
 public class Nope extends Card{
     private Card actingCard;
-    private Table table;
 
     public Nope(){
         super("Nope");
@@ -8,14 +7,21 @@ public class Nope extends Card{
 
     public void play(Table table){
         try{
-            table.getTopDiscard().nope(table);
-            actingCard=table.getTopDiscard();
-            this.table=table;
+            if(actingCard==null){
+                table.getTopDiscard().nope(table);
+                actingCard=table.getTopDiscard();
+                setReversable();
+                table.removePending(actingCard);
+            }
+            else{
+                actingCard.nope(table);
+            }
         }
         catch(Exception e){}
     }
 
-    private void reverse(){
+    protected void reverse(Table table){
         actingCard.play(table);
+        table.addPending(actingCard);
     }
 }

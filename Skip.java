@@ -12,8 +12,7 @@ public class Skip extends Card{
     
     public void play(Table table){
         table.setToDraw(table.getToDraw()-toSkip);
-        if(table.getToDraw()<1){
-            table.next();
-        }
     }
+
+    protected void reverse(Table table){}
 }

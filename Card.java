@@ -34,8 +34,7 @@ public abstract class Card {
         }
     }
 
-    private void reverse(Table table){
-    }
+    protected abstract void reverse(Table table);
 
     public String toString(){
         return name;
